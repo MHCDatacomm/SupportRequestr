@@ -7,8 +7,8 @@ contains the PHP script and 'uploads' folder to upload screenshots and files.  B
 
 # Setup
 1. Edit the PHP script under 'leads_process'
-- 1.1 Define your own RepairShopr domain for the API_URL
-- 1.2 Define your own RepairShopr API key for API_KEY
-- 1.3 Define BASE_URL with the location of your 'leads_process' folder
+   - Define your own RepairShopr domain for the API_URL
+   - Define your own RepairShopr API key for API_KEY
+   - Define BASE_URL with the location of your 'leads_process' folder
 
 # Installation
