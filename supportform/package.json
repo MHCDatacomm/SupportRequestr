@@ -1,0 +1,79 @@
+{
+  "private": true,
+  "name": "supportform",
+  "version": "1.0.0",
+  "productName": "Support Request Form",
+  "description": "Support request form for managed IT clients.",
+  "author": {
+    "name": "MHC Datacomm, Inc.",
+    "email": "support@mhcdce.com"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "com.mhcdce.supportform",
+    "copyright": "Copyright © 2018 ${author.name}.",
+    "asar": true,
+    "compression": "maximum",
+    "files": [
+      "css",
+      "fonts",
+      "img",
+      "node_modules",
+      "index.html",
+      "index.js",
+      "newTicket.js",
+      "icon.png",
+      "package.json",
+      "main.js",
+      "renderer.js"
+    ],
+    "linux": {
+      "target": "deb",
+      "synopsis": "Support Request Form",
+      "vendor": "mhcdce.com",
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis",
+      "legalTrademarks": "Copyright © 2018 ${author.name}. All rights reserved",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "runAfterFinish": true,
+      "warningsAsErrors": false
+    },
+    "directories": {
+      "buildResources": "build",
+      "output": "releases",
+      "app": "src"
+    }
+  },
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1",
+    "electron-packager": "^12.0.1"
+  },
+  "dependencies": {
+    "electron-winstaller": "^2.6.4",
+    "fs-force-mkdir-sync": "^1.1.0",
+    "fullname": "^3.3.0",
+    "fullname-native": "^2.0.0",
+    "npm": "^5.8.0",
+    "shelljs": "^0.8.1",
+    "windows-build-tools": "^2.2.1"
+  },
+  "scripts": {
+    "start": "electron ./src",
+    "packager": "electron-packager . supportform --platform=win32 --arch=all",
+    "build-test": "build -l --x64 --dir",
+    "build-production": "build -l deb --x64",
+    "build-production-32": "build -l deb --ia32",
+    "build-win-test": "build -w --x64 --dir",
+    "build-win-production": "build -w --x64",
+    "build-win-production-32": "build -w --ia32",
+    "build-win-test-32": "build -w --ia32 --dir"
+  }
+}
