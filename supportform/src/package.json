@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "supportform",
+  "version": "1.0.0",
+  "productName": "Support Request",
+  "description": "Support Request Form",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "MHC Datacomm, Inc.",
+    "email": "support@mhcdce.com"
+  },
+  "homepage": "https://www.mhcdce.com",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "parsleyjs": "^2.8.1",
+    "fs-extra": "^5.0.0",
+    "request": "^2.85.0",
+    "form-data": "^2.3.2"
+  }
+}

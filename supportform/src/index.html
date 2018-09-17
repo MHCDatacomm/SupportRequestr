@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Support Request Form</title>
+    <link rel="stylesheet" href="fonts/Open_Sans/font.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+      <form id="submitTicketForm" enctype="multipart/form-data" name="ticketForm">
+        <div>
+          <table>
+            <tr>
+              <th>
+                <label for="ticket_type"><b>Issue Type<font color="red">*</font></b></label>
+              </th>
+              <th>
+                <select name="ticket_type" autofocus required>
+                  <option value=""></option>
+                  <option value="Incident">Incident</option>
+                  <option value="Question">Question</option>
+                  <option value="Workorder">Workorder</option>
+                  <option value="Feature Request">Feature Request</option>
+                </select>
+              </th>
+              <th> </th>
+              <th>
+                <label for="hostname">Device</label>
+              </th>
+              <th>
+                <div class="hostname">
+                  <input class="autofield" for="hostname" id="hostname" pixels="5" readonly />
+                </div>
+              </th>
+            </tr>
+          </table>
+
+          <label for="subject"><b>Subject<font color="red">*</font></b></label>
+          <input class="field" type="text" name="subject" id="subject" placeholder="Subject of your request" value="" required /><br />
+
+          <label for="description"><b>Body<font color="red">*</font></b></label>
+          <textarea name="description" placeholder="Write about your problem here" required></textarea><br />
+
+          <label for="name"><b>Name<font color="red">*</font></b></label>
+          <input class="field" type="text" name="name" placeholder="First and Last name" value="" required/><br />
+
+          <label for="email"><b>Email<font color="red">*</font></b></label>
+          <input class="field" type="email" name="email" placeholder="Enter your e-mail address here" value="" required/><br />
+
+          <label for="phone"><b>Phone</b></label>
+          <input class="field" type="tel" name="phone" placeholder="Enter your phone number here" value="" /><br />
+
+          <label for="images"><b>Files</b></label>
+          <table>
+            <tr>
+              <th style="width: 50%;">
+                <button id="screen-shot" class="btn btn-info">Click to Take Screenshot</button>
+                <br />
+
+                <!-- <label for="screenshotUpload" class="btn btn-info" style="width: 80%;">Select Screenshot</label>
+                <input type="file" id="screenshotUpload" onchange="filePreview(this.files)" accept="image/*" style="display: none;"> -->
+
+              </th>
+              <th style="width: 48%;padding-left: 5px;">
+                <label for="imageUpload" class="btn btn-info">Upload File</label>
+                <input type="file" id="imageUpload" name="file" onchange="filePreview(this.files)" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" style="display: none">
+              </th>
+              <th>
+                <button type="button" name="submitbutton" class="btn btn-success" id="submitbutton">Submit</button>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <label id="screenshot-path"></label>
+                <img alt="Screenshot Preview" id="screen-shot-preview" style="display: none; width: 50%;">
+              </td>
+              <td>
+                <div id="selectedPicPreview">
+                </div>
+                <img alt="Image Preview" id="pic-preview" style="display: none; width: 50%;">
+                <div id="selectedPicDetails"></div>
+              </td>
+            </tr>
+          </table>
+          </div>
+
+          <span class="validity"></span>
+
+        </div>
+        <!-- <div>
+          <button type="button" name="submitbutton" class="btn btn-success" id="submitbutton">Submit</button>
+        </div> -->
+        <!-- <input type="text" name="hostname" id="hostname" placeholder="Computer Name" hidden readonly> -->
+      </form>
+
+      <script type="text/javascript">
+        window.jQuery = window.$ = jQuery = $ = require('jquery');
+      </script>
+      
+      <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+      <script src="renderer.js"></script>
+      <script src="node_modules/parsleyjs/dist/parsley.min.js"></script>
+      <!-- <script src="index.js"></script> -->
+      <script src="newTicket.js"></script>
+  </body>
+</html>
